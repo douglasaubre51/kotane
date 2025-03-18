@@ -1,7 +1,6 @@
 package com.chatapp.kotane.configuration;
 
 import com.chatapp.kotane.handlers.*;
-import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.*;
 import org.springframework.context.annotation.*;
 
