@@ -1,11 +1,9 @@
 package com.chatapp.kotane.handlers;
 
-import org.springframework.stereotype.Component;
 import org.springframework.web.socket.handler.*;
 import org.springframework.web.socket.*;
 import java.util.concurrent.*;
 
-@Component
 public class SignalHandler extends TextWebSocketHandler {
 
     private static CopyOnWriteArrayList<WebSocketSession> sessions = new CopyOnWriteArrayList<WebSocketSession>();
@@ -32,7 +30,7 @@ public class SignalHandler extends TextWebSocketHandler {
 
         for (WebSocketSession s : sessions) {
             if (s.isOpen() && s.getId() != session.getId()) {
-                session.sendMessage(message);
+                s.sendMessage(message);
             }
         }
     }
